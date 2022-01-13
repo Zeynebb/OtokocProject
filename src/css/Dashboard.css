@@ -1,0 +1,90 @@
+.mainDivDashboard{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+.listDiv{
+    margin-top: 3%;
+}
+#filterDiv{
+    
+    
+}
+#filterDiv div{
+    height: 40px;
+}
+
+#profile{
+    float: left;
+}
+
+.mainDivDashboard 
+.w3-row{
+    margin-left: 5%;
+    width: 90%;
+}
+
+#listDashboard{
+    margin-top: 2%;
+    min-height: 10%;
+}
+#listDashboard div{
+    padding-top: 2%;
+}
+
+#w3RowHeader div{
+    background-color:rgb(95, 94, 94);
+    min-height: 1em;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+    
+   
+}
+#dashboardImageDiv{
+    padding-top: -2%;
+}
+
+#dashboardImage{
+    width: 50%;
+    
+}
+#inputDashboardQuantity{
+    margin-top: -5%;
+    width: 30%;
+}
+
+#buttonDashboardAdd{
+    width: 5%;
+    text-align: center;
+    background-color: white;
+    margin-top: -3%;
+
+}
+#buttonDashboardText{
+    background-color: rgb(189, 27, 27);
+    color: white;
+    font-size: medium;
+    border: white;
+    margin-top: -5%;
+    width: 100%;
+    min-height: 40px;
+    font-weight: bold;
+    
+
+}
+#buttonDashboardText:hover{
+    background-color: rgb(221, 221, 221); 
+    color: black;
+}
+
+#dashboardSelect{
+    padding-left: 2%;
+    width: 80%;
+}
+#searchDiv input{
+    width: 80%;
+    height: 100%;
+    margin-left: 0%;
+    margin-top: 0%;
+    font-weight: bold;
+}

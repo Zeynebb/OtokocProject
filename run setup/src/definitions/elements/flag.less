@@ -1,0 +1,42 @@
+/*!
+ * # Fomantic-UI - Flag
+ * http://github.com/fomantic/Fomantic-UI/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+
+/*******************************
+            Theme
+*******************************/
+
+@type    : 'element';
+@element : 'flag';
+
+@import (multiple) '../../theme.config';
+
+
+/*******************************
+             Flag
+*******************************/
+
+i.flag:not(.icon) {
+  speak: none;
+  backface-visibility: hidden;
+}
+
+i.flag:not(.icon):before {
+  content: '\00A0\00A0\00A0\00A0\00A0\00A0\00A0';
+  display: inline-block;
+  line-height: @flagLineHeight;
+  background-repeat: no-repeat;
+  background-position: center center;
+  & when not (@flagFileType = 'svg') {
+    background-size: contain;
+  }
+}
+
+.loadUIOverrides();

@@ -3,11 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import '../node_modules/fomantic-ui/dist/semantic.min.css'
+import '../node_modules/w3-css/w3.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { configureStore } from './store/configureStore';
+import { Provider } from 'react-redux';
+
+const store = configureStore()
 
 ReactDOM.render(
+
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
+  ,
   document.getElementById('root')
 );
 

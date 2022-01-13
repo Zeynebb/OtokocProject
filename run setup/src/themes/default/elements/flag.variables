@@ -1,0 +1,15 @@
+/*******************************
+            Flag
+*******************************/
+
+/*--------------
+    Path
+---------------*/
+@flagPath: "https://twemoji.maxcdn.com/v/latest/svg/";
+@flagFileType: "svg";
+
+/*-------------------
+       Element
+--------------------*/
+
+@flagLineHeight: @headerLineHeight;

@@ -1,0 +1,35 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cartDetailDiv{
+  margin-top: 20%;
+  text-align: left;
+  
+}
+.cartDetailDiv p{
+  float: left;
+  
+}
+#cartDetailText{
+  font-weight: bold;
+  font-size: large;
+  float: left;
+  text-align: left;
+}
+
+#cartDetailHr{
+  border: 1px solid black;
+}
+#cartDetailProductsDiv{
+  font-size: 16px;
+}
+#cartDeleteButton{
+  background-color: white;
+  padding: 0;
+  margin-left: 5%;
+}
+#cartDeleteButton:hover{
+  color: red;
+
+}

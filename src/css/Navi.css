@@ -1,0 +1,46 @@
+.main .navbarUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+.main .navbarUl li {
+  float: left;
+  margin:1%;
+}
+
+.main .navbarUl li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main .navbarUl li a:hover:not(.active) {
+  background-color: rgb(221, 221, 221);
+}
+
+.main .active {
+  background-color: #04AA6D;
+}
+
+#profileNavi{
+  width: 10%;
+}
+
+#logoNavi{
+  width: 30%;
+  float: left;
+  margin: 1%;
+}
+
+.hrTop{
+  border-top: 3px solid black;
+  margin-top: -0.5%;
+}
+  
+  

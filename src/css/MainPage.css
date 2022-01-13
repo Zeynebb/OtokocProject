@@ -1,0 +1,26 @@
+
+#mainPageMainDiv{
+    width: 100%;
+}
+
+#openCartDetailDiv{
+    width: 100%;
+    background-color: black;
+}
+#openCartDetailButton{
+    background-color: white;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: medium;
+}
+
+#appDivDashboard{
+    border-right: 2px solid #000000;
+    margin-right: 2%;
+    width: 70%;
+  }
+  
+#appCartSummaryDiv{
+    width: 25%;
+}
