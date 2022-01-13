@@ -8,6 +8,9 @@ import '../node_modules/w3-css/w3.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { configureStore } from './store/configureStore';
 import { Provider } from 'react-redux';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 
 const store = configureStore()
 
