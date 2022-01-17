@@ -33,6 +33,10 @@
 
 <hr />
 
-### Araç marka ve modeline göre filtreleme
+### Marka, model ve parça numarasına göre filtreleme
 
-![filter](https://user-images.githubusercontent.com/46132459/149397950-ddd5f897-2381-4e3c-86a9-9f4d18e7d019.gif)
+![mainPageFilter](https://user-images.githubusercontent.com/46132459/149802134-40caf2e9-6fe0-405d-98dd-d81e63440eb8.gif)
+
+
+
+
