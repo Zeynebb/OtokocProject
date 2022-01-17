@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -10,6 +12,7 @@
     "fomantic-ui": "^2.9.0-beta.192",
     "formik": "^2.2.9",
     "lodash": "^4.17.21",
+    "material-ui-search-bar": "^1.0.0",
     "moment": "^2.29.1",
     "primeicons": "^5.0.0",
     "primereact": "^7.1.0",
