@@ -1,9 +1,9 @@
 import { useFormik } from 'formik';
 import React, { useEffect } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import '../../css/Login.css'
 import * as Yup from "yup";
-import { Button, Label } from 'semantic-ui-react';
+import { Label } from 'semantic-ui-react';
 
 export default function Login() {
     let navigate = useNavigate()

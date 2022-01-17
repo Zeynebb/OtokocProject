@@ -1,23 +1,21 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Button, Dropdown } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 import '../../css/Dashboard.css'
 import { addToCart } from '../../store/actions/cartActions'
 import { addKDV, addSubTotal } from '../../store/actions/resultActions'
 import _ from "lodash";
 import { MultiSelect } from 'primereact/multiselect'
+import SearchBar from "material-ui-search-bar"
 
 export default function Dashboard() {
 
     const dispatch = useDispatch()
 
     const { productList } = useSelector(state => state.productList)
-
-    const [products, setProductList] = useState(productList)
-
     const [selectedBrand, setSelectedBrand] = useState([])
     const [selectedModel, setSelectedModel] = useState([])
-
+    const [selectedPartNo, setSelectedPartNo] = useState("")
     function handleAddToCart(product) {
         dispatch(addToCart(product, handleGetQuantity()))
 
@@ -51,42 +49,45 @@ export default function Dashboard() {
         let kdvPrice = ((price * 18) / 100);
         dispatch(addKDV(kdvPrice))
     }
-    let withBrandFilterData = products.filter(product => selectedBrand ? selectedBrand.includes(product.brand) : null);
-    let withoutBrandFilterData = productList
+    let withoutFilterData = productList
+    let withBrandFilterData = productList.filter(product => { return selectedBrand.includes(product.brand); });
     function handleBrandFilterData() {
         if (selectedBrand.length === 0) {
-            return withoutBrandFilterData
+            return withoutFilterData
         }
 
         else {
             return withBrandFilterData
         }
     }
-    let withModelFilterData = products.filter(product => selectedModel ? selectedModel.includes(product.model) : null);
-    let withoutModelFilterData = productList
+    let withModelFilterData = productList.filter(product => { return selectedModel.includes(product.model); });
     function handleModelFilterData() {
         if (selectedModel.length === 0) {
-            return withoutModelFilterData
+            return withoutFilterData
         }
 
         else {
             return withModelFilterData
         }
     }
-    // handleBrandFilterData handleModelFilterData selectedBrand selectedModel
-    let filteredProductList = []
-    if (selectedBrand.length > 0 && selectedModel.length === 0) {
-        filteredProductList = _.intersection(handleBrandFilterData())//Şehir varsa
+    let withPartNoFilterData = productList.filter(product => { return product.productNo.includes(selectedPartNo); });
+    function handlePartNoFilterData() {
+        if (selectedPartNo === null) {
+            return withoutFilterData
+        }
+
+        else {
+            return withPartNoFilterData
+        }
     }
-    else if (selectedBrand.length === 0 && selectedModel.length > 0) {
-        filteredProductList = _.intersection(handleModelFilterData())//çalışma zamanı varsa
-    }
-    else if (selectedBrand.length > 0 && selectedModel.length > 0) {
-        filteredProductList = _.intersection(handleBrandFilterData(), handleModelFilterData())//şehir + çalışma zamanı varsa
-    }
-    else if (selectedBrand.length === 0 && selectedModel.length === 0) {//şehir + çalışma zamanı yoksa
-        filteredProductList = productList
-    }
+
+    let withFilterData = []
+    withFilterData = _.intersection(handleBrandFilterData(), handlePartNoFilterData(), handleModelFilterData());
+    const cancelSearch = () => {
+        setSelectedPartNo("");
+        handlePartNoFilterData();
+    };
+
 
     return (
         <div className="mainDivDashboard">
@@ -113,8 +114,13 @@ export default function Dashboard() {
                 </div>
                 <div class="w3-col s4 w3-center">
                     <div class="ui icon input" id="searchDiv">
-                        <input type="text" placeholder="Parça No..." />
-                        <i class="search icon"></i></div>
+                        <SearchBar
+                            id="dashboardSearchBar"
+                            placeholder="Parça No"
+                            onChange={(searchVal) => setSelectedPartNo(searchVal)}
+                            onCancelSearch={() => cancelSearch()}
+                        />
+                    </div>
                 </div>
             </div>
             <div className="listDiv">
@@ -128,7 +134,7 @@ export default function Dashboard() {
                         <div class="w3-col m2 w3-center" style={{ color: "rgb(95, 94, 94)" }}><p>-</p></div>
                     </div>
                 </div>
-                {filteredProductList.map((product) => (
+                {withFilterData.map((product) => (
                     <div class="w3-row" id="listDashboard">
                         <p class="w3-col m2 w3-center" id="dashboardImageDiv">
                             <img id="dashboardImage"
